@@ -7,11 +7,12 @@ export const Sidebar = () => {
       className="
     bg-[#202225]
      h-screen 
-     w-16 flex 
+     w-[72px] flex 
      items-center 
      gap-2
      py-2
      flex-col
+     absolute
      "
     >
       <ChannelIcon type="home" />

@@ -13,6 +13,7 @@ export const Header = () => {
     items-center
     px-6    
     gap-2
+    mx-16
     "
     >
       <FriendTitle />
