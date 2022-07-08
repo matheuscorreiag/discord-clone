@@ -1,4 +1,5 @@
 import React from "react";
+import { Username } from "../../../../common/components/Username";
 import { UserPhoto } from "../../../../common/components/UserPhoto";
 
 export const UserChat: React.FC = () => {
@@ -19,7 +20,11 @@ export const UserChat: React.FC = () => {
     "
     >
       <UserPhoto />
-      <p className="text-sm font-medium">Matheus</p>
+    
+     <Username     />
     </div>
   );
 };
+
+
+  

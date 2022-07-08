@@ -21,6 +21,7 @@ body{
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
     width: 5px;
+    
   }
 
   *::-webkit-scrollbar-track {
@@ -28,5 +29,5 @@ body{
   }
 
   *::-webkit-scrollbar-thumb {
-    @apply bg-zinc-900;
+    @apply bg-zinc-900 rounded-lg;
   }

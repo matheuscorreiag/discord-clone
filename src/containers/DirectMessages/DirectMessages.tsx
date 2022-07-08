@@ -13,25 +13,52 @@ export const DirectMessages: React.FC = () => {
     mx-[72px]
     flex
     bg-[#282b30]
+    bg-opacity-50
     items-center
     flex-col
-    p-3
     gap-y-2
     "
     >
       <Searchbar />
-      <Title />
 
       <div
         className="
       flex
       flex-col
       w-full
-      gap-1
+      gap-y-1
       overflow-y-scroll
       overflow-x-hidden
+      p-3
+      
       "
       >
+        <Title />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
+        <UserChat />
         <UserChat />
         <UserChat />
       </div>
