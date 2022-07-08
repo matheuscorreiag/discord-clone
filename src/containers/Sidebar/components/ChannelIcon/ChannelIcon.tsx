@@ -23,7 +23,10 @@ export const ChannelIcon: React.FC<ChannelIconProps> = ({ type, group }) => {
     text-white
     cursor-pointer
     ${type === "home" && "hover:bg-blue-600"}
-    ${group && "text-green-600 hover:bg-green-600 hover:text-white "}
+    ${
+      group === "default" &&
+      "text-green-600 hover:bg-green-600 hover:text-white "
+    }
     `}
     >
       {type === "channel" && <div> </div>}

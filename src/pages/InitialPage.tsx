@@ -1,9 +1,9 @@
-import { Sidebar } from "../containers/Sidebar";
+import { Header } from "../containers/Header";
 
 export const InitialPage = () => {
   return (
     <div>
-      <Sidebar />
+      <Header />
     </div>
   );
 };

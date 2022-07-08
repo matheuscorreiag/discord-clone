@@ -1,3 +1,4 @@
+import { Divider } from "../../common/components/Divider";
 import { ChannelIcon } from "./components/ChannelIcon";
 
 export const Sidebar = () => {
@@ -14,6 +15,8 @@ export const Sidebar = () => {
      "
     >
       <ChannelIcon type="home" />
+
+      <Divider type="horizontal" />
       <ChannelIcon type="plus" group="default" />
       <ChannelIcon type="download" group="default" />
       <ChannelIcon type="path" group="default" />
