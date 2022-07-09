@@ -1,5 +1,5 @@
 import React from "react";
-import { ActiveChatHeader } from "./ActiveChatHeader";
+import { ActiveChatHeader } from "./components/ActiveChatHeader";
 
 export const ActiveChat: React.FC = () => {
   return (
@@ -7,6 +7,7 @@ export const ActiveChat: React.FC = () => {
       className="
     bg-[#36393e]
       h-full
+      text-white
     "
     >
       <ActiveChatHeader />
