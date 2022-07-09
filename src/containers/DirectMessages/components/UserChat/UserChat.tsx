@@ -2,7 +2,17 @@ import React from "react";
 import { Username } from "../../../../common/components/Username";
 import { UserPhoto } from "../../../../common/components/UserPhoto";
 
-export const UserChat: React.FC = () => {
+interface UserChatProps {
+  id: string;
+  username: string;
+  imageUrl: string;
+}
+
+export const UserChat: React.FC<UserChatProps> = ({
+  id,
+  imageUrl,
+  username,
+}) => {
   return (
     <div
       className="
@@ -19,12 +29,9 @@ export const UserChat: React.FC = () => {
     cursor-pointer
     "
     >
-      <UserPhoto />
-    
-     <Username     />
+      <UserPhoto imageUrl={imageUrl} />
+
+      <Username username={username} />
     </div>
   );
 };
-
-
-  

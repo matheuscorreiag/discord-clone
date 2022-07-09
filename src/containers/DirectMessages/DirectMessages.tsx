@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import api from "../../services/api";
 import { Searchbar } from "./components/Searchbar";
 import { Title } from "./components/Title";
 import { UserChat } from "./components/UserChat";
 
+interface UserProps {
+  username: string;
+  imageUrl: string;
+  id: string;
+}
+
 export const DirectMessages: React.FC = () => {
+  const [users, setUsers] = useState<UserProps[]>([]);
+
+  useEffect(() => {
+    api.get("/users").then((response) => {
+      setUsers(response.data);
+    });
+  }, []);
+
   return (
     <div
       className="
@@ -34,33 +49,16 @@ export const DirectMessages: React.FC = () => {
       "
       >
         <Title />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
-        <UserChat />
+        {users.map((user) => {
+          return (
+            <UserChat
+              id={user.id}
+              imageUrl={user.imageUrl}
+              username={user.username}
+              key={user.id}
+            />
+          );
+        })}
       </div>
     </div>
   );

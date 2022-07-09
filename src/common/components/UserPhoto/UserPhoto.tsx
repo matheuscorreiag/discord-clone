@@ -1,6 +1,10 @@
 import React from "react";
 
-export const UserPhoto: React.FC = () => {
+interface UserPhotoProps {
+  imageUrl: string;
+}
+
+export const UserPhoto: React.FC<UserPhotoProps> = ({ imageUrl }) => {
   return (
     <div
       className="
@@ -8,7 +12,10 @@ export const UserPhoto: React.FC = () => {
   rounded-full
   w-7
   h-7
+  overflow-hidden
   "
-    ></div>
+    >
+      <img src={imageUrl} alt="user-photo" />
+    </div>
   );
 };

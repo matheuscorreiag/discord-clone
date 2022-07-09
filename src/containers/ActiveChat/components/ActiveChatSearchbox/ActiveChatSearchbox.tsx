@@ -18,7 +18,6 @@ export const ActiveChatSearchbox: React.FC = () => {
       `}
       onFocus={() => setIsSearching(true)}
       onBlur={() => setIsSearching(false)}
-      // onClick={() => setIsSearching(true)}
       placeholder="Search"
     />
   );
