@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { ActiveChat } from "../containers/ActiveChat";
 import { DirectMessages } from "../containers/DirectMessages";
+import { UserChatProps } from "../containers/DirectMessages/DirectMessages";
 import { Sidebar } from "../containers/Sidebar";
 
 export const InitialPage = () => {
-  const [activeChat, setActiveChat] = useState("");
+  const [activeChat, setActiveChat] = useState<UserChatProps>({
+    username: "",
+    imageUrl: "",
+  });
 
-  const handleActiveChatChange = (chat: string) => {
-    setActiveChat(chat);
+  const handleActiveChatChange = (userChat: UserChatProps) => {
+    setActiveChat(userChat);
   };
 
   return (
@@ -18,8 +22,11 @@ export const InitialPage = () => {
     "
     >
       <Sidebar />
-      <DirectMessages activeChatUsername={handleActiveChatChange} />
-      <ActiveChat username={activeChat} />
+      <DirectMessages activeUser={handleActiveChatChange} />
+      <ActiveChat
+        username={activeChat.username}
+        imageUrl={activeChat.imageUrl}
+      />
       {/* <Header /> */}
     </div>
   );

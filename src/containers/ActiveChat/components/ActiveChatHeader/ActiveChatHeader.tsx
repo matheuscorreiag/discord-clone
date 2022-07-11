@@ -1,10 +1,15 @@
 import { At } from "phosphor-react";
 import React from "react";
 import { Divider } from "../../../../common/components/Divider";
-import { ActiveChatProps } from "../../ActiveChat";
 import { ActiveChatIcons } from "../ActiveChatIcons";
 
-export const ActiveChatHeader: React.FC<ActiveChatProps> = ({ username }) => {
+interface ActiveChatHeaderProps {
+  username: string;
+}
+
+export const ActiveChatHeader: React.FC<ActiveChatHeaderProps> = ({
+  username,
+}) => {
   return (
     <div
       className="
