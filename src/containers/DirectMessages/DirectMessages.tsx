@@ -10,7 +10,13 @@ interface UserProps {
   id: string;
 }
 
-export const DirectMessages: React.FC = () => {
+interface DirectMessagesProps {
+  activeChatUsername: (username: string) => void;
+}
+
+export const DirectMessages: React.FC<DirectMessagesProps> = ({
+  activeChatUsername,
+}) => {
   const [users, setUsers] = useState<UserProps[]>([]);
 
   useEffect(() => {
@@ -51,12 +57,14 @@ export const DirectMessages: React.FC = () => {
         <Title />
         {users.map((user) => {
           return (
-            <UserChat
-              id={user.id}
-              imageUrl={user.imageUrl}
-              username={user.username}
-              key={user.id}
-            />
+            <div onClick={() => activeChatUsername(user.username)}>
+              <UserChat
+                id={user.id}
+                imageUrl={user.imageUrl}
+                username={user.username}
+                key={user.id}
+              />
+            </div>
           );
         })}
       </div>
